@@ -1,4 +1,4 @@
-baseURL = "https://mondracode.github.io/visual-computing-showcase"
+baseURL = "https://mondracode.github.io/visual-computing-visual-computing-assignments"
 languageCode = "en-us"
 title = "Showcase Template"
 theme = 'book'
@@ -22,7 +22,7 @@ enableGitInfo = true
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/visualcomputing/showcase'
+  BookRepo = 'https://github.com/visualcomputing/visual-computing-assignments'
 
   # Configure the date format used on the pages
   # - In git information

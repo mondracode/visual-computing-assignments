@@ -18,11 +18,11 @@ Look at this [brief explanation](https://p5js.org/examples/color-relativity.html
 
 {{< details title="p5-iframe markdown" open=false >}}
 {{< highlight html >}}
-{{</* p5-iframe sketch="/showcase/sketches/colors.js" width="725" height="425 */>}}
+{{</* p5-iframe sketch="/visual-computing-assignments/sketches/colors.js" width="725" height="425 */>}}
 {{< /highlight >}}
 {{< /details >}}
 
-{{< p5-iframe sketch="/showcase/sketches/colors.js" width="725" height="425" >}}
+{{< p5-iframe sketch="/visual-computing-assignments/sketches/colors.js" width="725" height="425" >}}
 
 ## Third party libraries
 
@@ -30,11 +30,11 @@ Example adapted from [p5.EasyCam](https://github.com/freshfork/p5.EasyCam/blob/m
 
 {{< details title="p5-iframe markdown" open=false >}}
 {{< highlight html >}}
-{{</* p5-iframe sketch="/showcase/sketches/quick_easycam.js" lib1="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.min.js" width="525" height="525" */>}}
+{{</* p5-iframe sketch="/visual-computing-assignments/sketches/quick_easycam.js" lib1="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.min.js" width="525" height="525" */>}}
 {{< /highlight >}}
 {{< /details >}}
 
-{{< p5-iframe sketch="/showcase/sketches/quick_easycam.js" lib1="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.min.js" width="525" height="525" >}}
+{{< p5-iframe sketch="/visual-computing-assignments/sketches/quick_easycam.js" lib1="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.min.js" width="525" height="525" >}}
 
 ## Sound
 
@@ -42,11 +42,11 @@ Example took from the [p5 examples](https://p5js.org/examples/sound-sound-effect
 
 {{< details title="p5-iframe markdown" open=false >}}
 {{< highlight html >}}
-{{</* p5-iframe sketch="/showcase/sketches/sound.js" width="225" height="225" */>}}
+{{</* p5-iframe sketch="/visual-computing-assignments/sketches/sound.js" width="225" height="225" */>}}
 {{< /highlight >}}
 {{< /details >}}
 
-{{< p5-iframe sketch="/showcase/sketches/sound.js" width="225" height="225" >}}
+{{< p5-iframe sketch="/visual-computing-assignments/sketches/sound.js" width="225" height="225" >}}
 
 # p5-global-iframe
 
@@ -69,76 +69,76 @@ Look at [this reference](https://michaelbach.de/ot/mot-breathingSquare/) for an 
 {{< details title="p5-global-iframe markdown" open=false >}}
 {{< highlight html >}}
 {{</* p5-global-iframe id="breath" width="625" height="625" >}}
-  // Coded as `global mode` of [this](https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/rotateSquare.js)
-  let angle = 0;
-  let speed = 0.06;
+// Coded as `global mode` of [this](https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/rotateSquare.js)
+let angle = 0;
+let speed = 0.06;
 
-  function setup() {
-    createCanvas(600, 600);
-  }
+function setup() {
+createCanvas(600, 600);
+}
 
-  function draw() {
-    background(255, 255, 255);
-    rotateSquare();
-    if (!mouseIsPressed) {
-      strokeWeight(0);
-      stroke(0);
-      fill(255, 140, 0);
-      rect(0, 0, 281, 281);
-      rect(318, 0, 281, 281);
-      rect(0, 318, 281, 281);
-      rect(318, 318, 281, 281);
-    }
-  }
+function draw() {
+background(255, 255, 255);
+rotateSquare();
+if (!mouseIsPressed) {
+strokeWeight(0);
+stroke(0);
+fill(255, 140, 0);
+rect(0, 0, 281, 281);
+rect(318, 0, 281, 281);
+rect(0, 318, 281, 281);
+rect(318, 318, 281, 281);
+}
+}
 
-  function rotateSquare() {
-    push();
-    angle += speed;
-    strokeWeight(0);
-    stroke(0);
-    fill(0, 0, 255);
-    translate(width / 2, height / 2);
-    rotate(angle);
-    rect(-187.5, -187.5, 375, 375);
-    pop();
-  }
+function rotateSquare() {
+push();
+angle += speed;
+strokeWeight(0);
+stroke(0);
+fill(0, 0, 255);
+translate(width / 2, height / 2);
+rotate(angle);
+rect(-187.5, -187.5, 375, 375);
+pop();
+}
 {{< /p5-global-iframe */>}}
 {{< /highlight >}}
 {{< /details >}}
 
 {{< p5-global-iframe id="breath" width="625" height="625" >}}
-  let angle = 0;
-  let speed = 0.06;
+let angle = 0;
+let speed = 0.06;
 
-  function setup() {
-    createCanvas(600, 600);
-  }
+function setup() {
+createCanvas(600, 600);
+}
 
-  function draw() {
-    background(255, 255, 255);
-    rotateSquare();
-    if (!mouseIsPressed) {
-      strokeWeight(0);
-      stroke(0);
-      fill(255, 140, 0);
-      rect(0, 0, 281, 281);
-      rect(318, 0, 281, 281);
-      rect(0, 318, 281, 281);
-      rect(318, 318, 281, 281);
-    }
-  }
+function draw() {
+background(255, 255, 255);
+rotateSquare();
+if (!mouseIsPressed) {
+strokeWeight(0);
+stroke(0);
+fill(255, 140, 0);
+rect(0, 0, 281, 281);
+rect(318, 0, 281, 281);
+rect(0, 318, 281, 281);
+rect(318, 318, 281, 281);
+}
+}
 
-  function rotateSquare() {
-    push();
-    angle += speed;
-    strokeWeight(0);
-    stroke(0);
-    fill(0, 0, 255);
-    translate(width / 2, height / 2);
-    rotate(angle);
-    rect(-187.5, -187.5, 375, 375);
-    pop();
-  }
+function rotateSquare() {
+push();
+angle += speed;
+strokeWeight(0);
+stroke(0);
+fill(0, 0, 255);
+translate(width / 2, height / 2);
+rotate(angle);
+rect(-187.5, -187.5, 375, 375);
+pop();
+}
 {{< /p5-global-iframe >}}
 
 # p5-widget
@@ -159,11 +159,11 @@ All parameters are optional. Default `ver` is `1.5.0`. For example:
 {{< highlight html >}}
 {{</* p5-widget autoplay=true height="400" width="400" ver="1.5.0" >}}
 function setup() {
-  createCanvas(300, 300);
+createCanvas(300, 300);
 }
 
 function draw() {
-  background(255, 0, 255);
+background(255, 0, 255);
 }
 {{< /p5-widget */>}}
 {{< /highlight >}}
@@ -171,10 +171,10 @@ function draw() {
 
 {{< p5-widget autoplay=true height="400" width="400" ver="1.5.0" >}}
 function setup() {
-  createCanvas(300, 300);
+createCanvas(300, 300);
 }
 
 function draw() {
-  background(255, 0, 255);
+background(255, 0, 255);
 }
 {{< /p5-widget >}}

@@ -18,11 +18,11 @@ Look at [this](https://mathworld.wolfram.com/ScintillatingGridIllusion.html) and
 
 {{< details title="p5-div markdown" open=false >}}
 {{< highlight html >}}
-{{</* p5-div sketch="/showcase/sketches/scintillating.js" */>}}
+{{</* p5-div sketch="/visual-computing-assignments/sketches/scintillating.js" */>}}
 {{< /highlight >}}
 {{< /details >}}
 
-{{< p5-div sketch="/showcase/sketches/scintillating.js" >}}
+{{< p5-div sketch="/visual-computing-assignments/sketches/scintillating.js" >}}
 
 # p5-instance-div
 
@@ -45,20 +45,20 @@ Look at [this](https://en.wikipedia.org/wiki/Lilac_chaser) introductory referenc
 {{< details title="p5-instance-div markdown" open=false >}}
 {{< highlight md >}}
 {{</* p5-instance-div id="lilac-chaser" >}}
-  // Adapted from [this](https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/lilacChaser.js)
-  let jump = 0;
-  let count = 0;
+// Adapted from [this](https://github.com/VisualComputing/Cognitive/blob/gh-pages/sketches/lilacChaser.js)
+let jump = 0;
+let count = 0;
 
-  p5.setup = function() {
-    p5.createCanvas(400, 400);
-    p5.frameRate(7);
-  };
+p5.setup = function() {
+p5.createCanvas(400, 400);
+p5.frameRate(7);
+};
 
-  function drawBlurCircles(x, y, r) {
-    p5.push();
-    p5.noStroke();
-    var opc = 0.4;
-    var step = 3.0/r;
+function drawBlurCircles(x, y, r) {
+p5.push();
+p5.noStroke();
+var opc = 0.4;
+var step = 3.0/r;
 
     for (var i = r; i > 0; i-=1.5) {
       if (opc < 5) {
@@ -68,32 +68,33 @@ Look at [this](https://en.wikipedia.org/wiki/Lilac_chaser) introductory referenc
       p5.ellipse(x, y, i, i);
     }
     p5.pop();
-  };
 
-  p5.draw = function() {
-    p5.background(200);
-    var numCircles = 12;
-    var stepAngle = 360.0/numCircles;
-    p5.push();
-    p5.translate(p5.width/2.0, p5.height/2.0);
-    for (var i = 0; i < 360; i = i + stepAngle) {
-      if (i != jump) {
-        p5.push();
-        p5.rotate(p5.radians(i));
-        drawBlurCircles(120, 0, 60);
-        p5.pop();
-      }
-    }
-    if( !p5.mouseIsPressed ) {
-      jump = (jump + stepAngle)%360;
-    }
-    p5.push();
-    p5.strokeWeight(1.5);
-    p5.line(-7, 0, 7, 0);
-    p5.line(0, -7, 0, 7);
-    p5.pop();
-    p5.pop();
-  }
+};
+
+p5.draw = function() {
+p5.background(200);
+var numCircles = 12;
+var stepAngle = 360.0/numCircles;
+p5.push();
+p5.translate(p5.width/2.0, p5.height/2.0);
+for (var i = 0; i < 360; i = i + stepAngle) {
+if (i != jump) {
+p5.push();
+p5.rotate(p5.radians(i));
+drawBlurCircles(120, 0, 60);
+p5.pop();
+}
+}
+if( !p5.mouseIsPressed ) {
+jump = (jump + stepAngle)%360;
+}
+p5.push();
+p5.strokeWeight(1.5);
+p5.line(-7, 0, 7, 0);
+p5.line(0, -7, 0, 7);
+p5.pop();
+p5.pop();
+}
 {{< /p5-instance-div */>}}
 {{< /highlight >}}
 {{< hint warning >}}
@@ -102,19 +103,19 @@ Note that `p5` should be the name to be used for the sketch object variable.
 {{< /details >}}
 
 {{< p5-instance-div id="pacman" >}}
-  let jump = 0;
-  let count = 0;
+let jump = 0;
+let count = 0;
 
-  p5.setup = function() {
-    p5.createCanvas(380, 380);
-    p5.frameRate(7);
-  };
+p5.setup = function() {
+p5.createCanvas(380, 380);
+p5.frameRate(7);
+};
 
-  function drawBlurCircles(x, y, r) {
-    p5.push();
-    p5.noStroke();
-    var opc = 0.4;
-    var step = 3.0/r;
+function drawBlurCircles(x, y, r) {
+p5.push();
+p5.noStroke();
+var opc = 0.4;
+var step = 3.0/r;
 
     for (var i = r; i > 0; i-=1.5) {
       if (opc < 5) {
@@ -124,32 +125,33 @@ Note that `p5` should be the name to be used for the sketch object variable.
       p5.ellipse(x, y, i, i);
     }
     p5.pop();
-  };
 
-  p5.draw = function() {
-    p5.background(200);
-    var numCircles = 12;
-    var stepAngle = 360.0/numCircles;
-    p5.push();
-    p5.translate(p5.width/2.0, p5.height/2.0);
-    for (var i = 0; i < 360; i = i + stepAngle) {
-      if (i != jump) {
-        p5.push();
-        p5.rotate(p5.radians(i));
-        drawBlurCircles(120, 0, 60);
-        p5.pop();
-      }
-    }
-    if( !p5.mouseIsPressed ) {
-      jump = (jump + stepAngle)%360;
-    }
-    p5.push();
-    p5.strokeWeight(1.5);
-    p5.line(-7, 0, 7, 0);
-    p5.line(0, -7, 0, 7);
-    p5.pop();
-    p5.pop();
-  }
+};
+
+p5.draw = function() {
+p5.background(200);
+var numCircles = 12;
+var stepAngle = 360.0/numCircles;
+p5.push();
+p5.translate(p5.width/2.0, p5.height/2.0);
+for (var i = 0; i < 360; i = i + stepAngle) {
+if (i != jump) {
+p5.push();
+p5.rotate(p5.radians(i));
+drawBlurCircles(120, 0, 60);
+p5.pop();
+}
+}
+if( !p5.mouseIsPressed ) {
+jump = (jump + stepAngle)%360;
+}
+p5.push();
+p5.strokeWeight(1.5);
+p5.line(-7, 0, 7, 0);
+p5.line(0, -7, 0, 7);
+p5.pop();
+p5.pop();
+}
 {{< /p5-instance-div >}}
 
 ## Video on canvas
@@ -159,26 +161,26 @@ Adapted from [here](https://p5js.org/examples/dom-video-canvas.html). Don't forg
 {{< details title="p5-instance-div markdown" open=false >}}
 {{< highlight md >}}
 {{</* p5-instance-div id="video" >}}
-  let fingers;
+let fingers;
 
-  p5.setup = function() {
-    p5.createCanvas(710, 400);
-    // specify multiple formats for different browsers
-    fingers = p5.createVideo(['/showcase/sketches/fingers.mov', '/showcase/sketches/fingers.webm']);
-    fingers.hide(); // by default video shows up in separate dom
-                    // element. hide it and draw it to the canvas instead    
-  };
+p5.setup = function() {
+p5.createCanvas(710, 400);
+// specify multiple formats for different browsers
+fingers = p5.createVideo(['/visual-computing-assignments/sketches/fingers.mov', '/visual-computing-assignments/sketches/fingers.webm']);
+fingers.hide(); // by default video shows up in separate dom
+// element. hide it and draw it to the canvas instead  
+ };
 
-  p5.draw = function() {
-    p5.background(150);
-    p5.image(fingers, 10, 10); // draw the video frame to canvas
-    p5.filter(p5.GRAY);
-    p5.image(fingers, 150, 150); // draw a second copy to canvas
-  };
+p5.draw = function() {
+p5.background(150);
+p5.image(fingers, 10, 10); // draw the video frame to canvas
+p5.filter(p5.GRAY);
+p5.image(fingers, 150, 150); // draw a second copy to canvas
+};
 
-  p5.mousePressed = function() {
-    fingers.loop(); // set the video to loop and start playing  
-  }
+p5.mousePressed = function() {
+fingers.loop(); // set the video to loop and start playing  
+ }
 {{< /p5-instance-div */>}}
 {{< /highlight >}}
 {{< hint warning >}}
@@ -187,24 +189,24 @@ Note that `p5` should be the name to be used for the sketch object variable.
 {{< /details >}}
 
 {{< p5-instance-div id="video" >}}
-  let fingers;
+let fingers;
 
-  p5.setup = function() {
-    p5.createCanvas(710, 400);
-    // specify multiple formats for different browsers
-    fingers = p5.createVideo(['/showcase/sketches/fingers.mov', '/showcase/sketches/fingers.webm']);
-    fingers.hide(); // by default video shows up in separate dom
-                    // element. hide it and draw it to the canvas instead    
-  };
+p5.setup = function() {
+p5.createCanvas(710, 400);
+// specify multiple formats for different browsers
+fingers = p5.createVideo(['/visual-computing-assignments/sketches/fingers.mov', '/visual-computing-assignments/sketches/fingers.webm']);
+fingers.hide(); // by default video shows up in separate dom
+// element. hide it and draw it to the canvas instead  
+ };
 
-  p5.draw = function() {
-    p5.background(150);
-    p5.image(fingers, 10, 10); // draw the video frame to canvas
-    p5.filter(p5.GRAY);
-    p5.image(fingers, 150, 150); // draw a second copy to canvas
-  };
+p5.draw = function() {
+p5.background(150);
+p5.image(fingers, 10, 10); // draw the video frame to canvas
+p5.filter(p5.GRAY);
+p5.image(fingers, 150, 150); // draw a second copy to canvas
+};
 
-  p5.mousePressed = function() {
-    fingers.loop(); // set the video to loop and start playing  
-  }
+p5.mousePressed = function() {
+fingers.loop(); // set the video to loop and start playing  
+ }
 {{< /p5-instance-div >}}
