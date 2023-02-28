@@ -3,13 +3,26 @@ title: Introduction
 type: docs
 ---
 
-# Showcase Template
+# **Visual Computing Assignments**
 
-Welcome to the [gohugo](https://gohugo.io/) template to create rich content [academic reports](https://www.wordy.com/writers-workshop/writing-an-academic-report/) having [p5.js](https://p5js.org/) sketches.
+## About us
 
-## Hacking
+{{< hint warning >}}
+**Camilo Andrés González Castro** [github](https://github.com/andgonzalezcas)
 
-Install the [gohugo](https://gohugo.io/) [static site generator](https://jamstack.org/generators/) then:
+Lorem ipsum
+{{< /hint >}}
+
+{{< hint orange >}}
+**Santiago Mondragón Gómez** [github](https://github.com/mondracode)\
+I'm an 11th semester student at Universidad Nacional de Colombia and work as a full-stack web developer. I enjoy working around computers and my favorite food is ajiaco.
+{{< /hint >}}
+
+{{< hint info >}}
+**Paul Leteliel Moros Anacona** [github](https://github.com/pmoros)
+
+Lorem ipsum
+{{< /hint >}}
 
 ```sh
 $git clone https://github.com/VisualComputing/visual-computing-assignments
@@ -18,23 +31,9 @@ $git submodule update --init --recursive
 $hugo server -D --disableFastRender
 ```
 
-Deploy with `$git push` after redefined `baseURL` in `config.toml` which should point to your actual public remote.
+This webpage is dedicated to hosting assignments made for the Visual Computing subject during the 2023-1 semester on Universidad Nacional de Colombia (UNAL).
 
 {{< hint warning >}}
 **Don't rename the repo but leave it as 'visual-computing-assignments'**  
 even so if you decided to rename the repo anyways, say to `newreponame`, don't forget to update all url references of the markdown and js file sources, to reflect that change, i.e., look within all [content folder](https://github.com/VisualComputing/visual-computing-assignments/tree/main/content) files for `visual-computing-assignments` occurrences and replace them by `newreponame`, which btw should easily be doable in any recent open source code editor, e.g., 🔎 in [kate](https://kate-editor.org/) or [vs-codium](https://vscodium.com/).
-{{< /hint >}}
-
-### Remarks
-
-{{< hint info >}}
-If you forked the repo don't forget to activate the [actions](https://github.com/VisualComputing/visual-computing-assignments/actions).
-{{< /hint >}}
-
-{{< hint info >}}
-Don't forget to select the `gh-pages` branch as the one to serve your site from at the [pages section of your repo configuration page](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), if it is no so by default.
-{{< /hint >}}
-
-{{< hint info >}}
-The **visual-computing-assignments** template uses the [hugo-book](https://github.com/alex-shpak/hugo-book) theme by default. Check the [hugo themes site](https://themes.gohugo.io/) if you wish to add other ones.
 {{< /hint >}}

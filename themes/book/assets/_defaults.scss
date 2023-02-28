@@ -26,6 +26,8 @@ $hint-colors: (
   info: #6bf,
   warning: #fd6,
   danger: #f66,
+  orange: #fa3,
+  green: #3ccf3c
 ) !default;
 
 // Themes
@@ -37,7 +39,7 @@ $hint-colors: (
   --color-link: #0055bb;
   --color-visited-link: #8440f1;
 
-  --body-background: white;
+  --body-background: #ededed;
   --body-font-color: black;
 
   --icon-filter: none;
