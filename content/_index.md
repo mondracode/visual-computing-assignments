@@ -7,10 +7,10 @@ type: docs
 
 ## About us
 
-{{< hint warning >}}
+{{< hint green >}}
 **Camilo Andrés González Castro** [github](https://github.com/andgonzalezcas)
 
-Lorem ipsum
+Student at the National University of Colombia, faculty of humanities at heart, dedicated to frontend development UX/UI.
 {{< /hint >}}
 
 {{< hint orange >}}
