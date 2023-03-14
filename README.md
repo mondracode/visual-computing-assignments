@@ -2,6 +2,14 @@
 
 Welcome to the [gohugo](https://gohugo.io/) template to create rich content [academic reports](https://www.wordy.com/writers-workshop/writing-an-academic-report/) having [p5.js](https://p5js.org/) sketches.
 
+## Docker
+
+This project is dockerized, so you can run it with:
+
+```sh
+docker run -p 1313:1313 hugo-visual-computing
+```
+
 ## Hacking
 
 Install the [gohugo](https://gohugo.io/) [static site generator](https://jamstack.org/generators/) then:
