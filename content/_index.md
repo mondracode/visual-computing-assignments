@@ -8,8 +8,7 @@ type: docs
 ## About us
 
 {{< hint green >}}
-**Camilo Andrés González Castro** [github](https://github.com/andgonzalezcas)
-
+**Camilo Andrés González Castro** [github](https://github.com/andgonzalezcas)\
 Student at the National University of Colombia, faculty of humanities at heart, dedicated to frontend development UX/UI.
 {{< /hint >}}
 
@@ -19,8 +18,7 @@ I'm an 11th semester student at Universidad Nacional de Colombia and work as a f
 {{< /hint >}}
 
 {{< hint info >}}
-**Paul Leteliel Moros Anacona** [github](https://github.com/pmoros)
-
+**Paul Leteliel Moros Anacona** [github](https://github.com/pmoros)\
 I'm a systems engineer student at the National University of Colombia, who is passionate about open source software, servers and infrastructure. I'm the proud owner of a cat named "Pako" and I love to read books.
 {{< /hint >}}
 
