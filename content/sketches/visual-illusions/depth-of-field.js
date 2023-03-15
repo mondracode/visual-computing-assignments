@@ -15,13 +15,13 @@ const canvasHeight = 400;
 
 function preload() {
   imgCardOriginal = loadImage(
-    "https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-dogs.jpg"
+    "https://cors-anywhere.herokuapp.com/https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-dogs.jpg"
   );
   imgCardBlur = loadImage(
-    "https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-dogs.jpg"
+    "https://cors-anywhere.herokuapp.com/https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-dogs.jpg"
   );
   imgBg = loadImage(
-    "https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-bg2.jpg"
+    "https://cors-anywhere.herokuapp.com/https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-bg2.jpg"
   );
 }
 
