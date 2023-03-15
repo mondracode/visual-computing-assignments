@@ -1,0 +1,31 @@
+---
+title: Depth of Field
+type: docs
+---
+
+# **Depth of field**
+
+This describes the distance between the nearest and farthest objects in a scene that appear acceptably sharp in an image. The distance between the nearest and farthest objects that appear acceptably sharp in an image is called the depth of field. The depth of field is affected by the focal length of the lens, the aperture of the lens, and the distance between the subject and the camera.
+
+## Understanding the effect
+
+The depth of field is affected by the focal length of the lens, the aperture of the lens, the distance between the subject and the camera, and the acceptable circle of confusion. The acceptable circle of confusion is the smallest circle of confusion that is acceptable for the image. The circle of confusion is the smallest circle that can be distinguished from a point of light. The circle of confusion is affected by the resolution of the image, the size of the image, and the distance between the subject and the camera. Below is the formula for the depth of field.
+
+{{< katex display >}}
+f(x) = \dfrac{2u^2Nc}{f^2}
+{{< /katex >}}
+
+In the next diagram, one can visualize the effect of the depth of field. In the picture a subject lies within the **DOF** so it is in focus, on the other hand the background is out of focus and so are the items closer to the camera.
+
+![Depth of field, person in range](https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/dof-01.png)
+
+This effect can be understood as the light rays that are coming from the subject are focused on the sensor, while the light rays that are coming from the background are not focused on the sensor. This is why the background is out of focus, same goes for the items closer to the camera.
+
+![Depth of field, light rays](https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/dof-02.png)
+
+## Example
+
+{{< p5-iframe sketch="/visual-computing-assignments/sketches/visual-illusions/depth-of-field.js" width="500" height="400" >}}
+
+{{< button relref="/" >}}Get Home{{< /button >}}
+{{< button href="https://github.com/alex-shpak/hugo-book" >}}Contribute{{< /button >}}
