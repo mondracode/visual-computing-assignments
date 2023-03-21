@@ -14,15 +14,10 @@ const canvasWidth = 500;
 const canvasHeight = 400;
 
 function preload() {
-  imgCardOriginal = loadImage(
-    "https://cors-anywhere.herokuapp.com/https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-dogs.jpg"
-  );
-  imgCardBlur = loadImage(
-    "https://cors-anywhere.herokuapp.com/https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-dogs.jpg"
-  );
-  imgBg = loadImage(
-    "https://cors-anywhere.herokuapp.com/https://paul-moros-visual-computing.s3.us-east-2.amazonaws.com/poker-bg2.jpg"
-  );
+  var hostURL = "https://mondracode.github.io/visual-computing-assignments/";
+  imgCardOriginal = loadImage(hostURL + "/poker-dogs.jpg");
+  imgCardBlur = loadImage(hostURL + "/poker-dogs.jpg");
+  imgBg = loadImage(hostURL + "/poker-bg2.jpg");
 }
 
 function setup() {
@@ -40,6 +35,9 @@ function setup() {
 
 let blur = false;
 function draw() {
+  var url = getURL();
+
+  console.log(url);
   background(255);
   drawCardWithImageBlur(imgBg, 0, 0, 0, width, height);
 
