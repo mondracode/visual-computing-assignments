@@ -7,7 +7,7 @@ type: docs
 
 ## Introduction
 
-This effect describes the distance between the nearest and farthest objects in a scene that appear acceptably sharp in an image.  The depth of field is affected by the focal length of the lens, the aperture of the lens, and the distance between the subject and the camera.
+This effect describes the distance between the nearest and farthest objects in a scene that appear acceptably sharp in an image. The depth of field is affected by the focal length of the lens, the aperture of the lens, and the distance between the subject and the camera.
 
 ## Understanding the effect
 
@@ -19,11 +19,11 @@ f(x) = \dfrac{2u^2Nc}{f^2}
 
 In the next diagram, one can visualize the effect of the depth of field. In the picture a subject lies within the **DOF** so it is in focus, on the other hand the background is out of focus and so are the items closer to the camera.
 
-![Depth of field, person in range](http://localhost:1313/visual-computing-assignments/dof-01.png)
+![Depth of field, person in range](https://mondracode.github.io/visual-computing-assignments/dof-01.png)
 
 This effect can be understood as the light rays that are coming from the subject are focused on the sensor, while the light rays that are coming from the background are not focused on the sensor. This is why the background is out of focus, same goes for the items closer to the camera.
 
-![Depth of field, light rays](http://localhost:1313/visual-computing-assignments/dof-02.png)
+![Depth of field, light rays](https://mondracode.github.io/visual-computing-assignments/dof-02.png)
 
 ## Solution
 
