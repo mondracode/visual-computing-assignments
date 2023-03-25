@@ -19,7 +19,7 @@ I'm an 11th semester student at Universidad Nacional de Colombia and work as a f
 
 {{< hint info >}}
 **Paul Leteliel Moros Anacona** [github](https://github.com/pmoros)\
-I'm a systems engineer student at the National University of Colombia, who is passionate about open source software, servers and infrastructure. I'm the proud owner of a cat named "Pako" and I love to read books.
+I'm a systems engineer student at the National University of Colombia, who is passionate about open source software, servers and infrastructure. From this course I hope I will be able to understand how 3D and other visual effects work in a 2D screen. I'm the proud owner of a cat named "Pako" and I love to read books.
 {{< /hint >}}
 
 {{< hint blue >}}
