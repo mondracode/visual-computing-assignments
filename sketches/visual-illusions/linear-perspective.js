@@ -39,10 +39,10 @@ function draw() {
   fill(0, 0, 0, 200)
   rect(200 - depth, 200, 2 * depth, -depth)
 
-  // keypress logic
-  if (keyCode === UP_ARROW && keyIsPressed === true && depth < 75) {
+  // keypress logic - 87 for W and 83 for S
+  if (keyCode === 87 && keyIsPressed === true && depth < 75) {
     depth += 0.35;
-  } else if (keyCode === DOWN_ARROW && keyIsPressed === true && depth > 1) {
+  } else if (keyCode === 83 && keyIsPressed === true && depth > 1) {
     depth -= 0.35;
   }
 
