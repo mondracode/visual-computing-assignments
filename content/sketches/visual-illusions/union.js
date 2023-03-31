@@ -51,17 +51,18 @@ function draw() {
     cloud.draw();
   }
 
-  // print the different birds
-  for (const bird of birds) {
-    bird.draw();
-  }
-
   // print the airplane
   for (const airplane of airplanes) {
     airplane.draw();
   }
 
+  // draw linear perspective skyscrapers
   skyscrapersLayer.draw();
+
+  // print the different birds
+  for (const bird of birds) {
+    bird.draw();
+  }
 }
 
 class Birds {
@@ -141,6 +142,6 @@ class Skyscrapers {
   }
 
   draw() {
-    image(skyscrapers, this.x, this.y, 400, 400);
+    image(skyscrapers, this.x, this.y, 500, 500);
   }
 }
