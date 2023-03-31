@@ -37,6 +37,9 @@ function setup() {
 
   // Setup the airplane
   airplanes.push(new Airplane(1));
+
+  // Setup skyscrapers
+  airplanes.push(new Skyscrapers(1));
 }
 
 function draw() {
@@ -125,5 +128,17 @@ class Airplane {
     this.y -= deltaY;
 
     image(airplaneImg, this.x, this.y, this.layer * 250 * 1.5, this.layer * 250 * 1);
+  }
+}
+
+class Skyscrapers {
+  constructor(layer) {
+    this.layer = layer;
+    this.x = 0;
+    this.y = 0;
+  }
+
+  draw() {
+    image(skyscrapers, this.x, this.y, 400, 400);
   }
 }
