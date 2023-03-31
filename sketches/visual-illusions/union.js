@@ -16,6 +16,7 @@ function preload() {
   birdsGif = loadImage(`${hostURL}/assets/birds.gif`);
   airplaneImg = loadImage(`${hostURL}/assets/plane.png`);
   skyscrapers = loadImage(`${hostURL}/assets/skyscrapers.png`);
+  manGif = loadImage(`${hostURL}/assets/fallingman.gif`);
 }
 
 function setup() {
@@ -40,6 +41,9 @@ function setup() {
 
   // Setup skyscrapers
   skyscrapersLayer = new Skyscrapers(1);
+
+  // Setup man
+  fallingMan = new Man(3);
 }
 
 function draw() {
@@ -58,6 +62,9 @@ function draw() {
 
   // draw linear perspective skyscrapers
   skyscrapersLayer.draw();
+
+  // draw falling man
+  fallingMan.draw();
 
   // print the different birds
   for (const bird of birds) {
@@ -143,5 +150,32 @@ class Skyscrapers {
 
   draw() {
     image(skyscrapers, this.x, this.y, 500, 500);
+  }
+}
+
+class Man {
+  constructor(layer) {
+    this.layer = layer;
+    this.x = width / 2;
+    this.y = height / 2;
+    this.sizeMultiplier = 0;
+    this.deltaX = 0;
+    this.deltaY = 0;
+  }
+
+  draw() {
+    this.sizeMultiplier += 0.002;
+    this.deltaX += 1
+    this.deltaY += 1
+
+    if (this.deltaX > 225 && this.deltaY > 225) {
+      this.deltaX = 0;
+      this.deltaY = 0;
+      this.sizeMultiplier = 0.002;
+    }
+
+    image(manGif, this.x + this.deltaX, this.y + this.deltaY, 507 * (this.sizeMultiplier % 1), 358 * (this.sizeMultiplier % 1));
+
+    text('depth: ' + (this.x + this.deltaX), 10, 30);
   }
 }
