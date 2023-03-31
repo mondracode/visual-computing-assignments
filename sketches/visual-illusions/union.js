@@ -39,7 +39,7 @@ function setup() {
   airplanes.push(new Airplane(1));
 
   // Setup skyscrapers
-  airplanes.push(new Skyscrapers(1));
+  skyscrapersLayer = new Skyscrapers(1);
 }
 
 function draw() {
@@ -60,6 +60,8 @@ function draw() {
   for (const airplane of airplanes) {
     airplane.draw();
   }
+
+  skyscrapersLayer.draw();
 }
 
 class Birds {
