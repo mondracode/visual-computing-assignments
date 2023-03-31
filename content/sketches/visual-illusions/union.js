@@ -166,7 +166,7 @@ class Man {
   draw() {
     this.sizeMultiplier += 0.002;
     this.deltaX -= 0.5;
-    this.deltaY += 1
+    this.deltaY += 1;
 
     if (this.deltaX < 140 && this.deltaY > 225) {
       this.deltaX = 0;
