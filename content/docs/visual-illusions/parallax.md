@@ -1,5 +1,5 @@
 ---
-title: Parallax
+title: 3. Parallax
 type: docs
 ---
 
@@ -22,18 +22,17 @@ To measure parallax, astronomers observe an object from two different positions,
 Astronomers use trigonometry to calculate the distance to the object using the formula: distance = 1/parallax angle. They can measure the parallax angle by observing the object at different times of the year when the Earth is at opposite sides of its orbit around the Sun.
 
 ## p5js example
+
 For this example, our point of view moves with respect to the direction of the mouse, we have several layers of paint, being the first layers the background and the last ones the "closest" to the user.
 
 {{< katex display >}}
 Dimension = \frac{maxDimensionOfCicles}{(numberOfLayers + 1) - this.layer}
 {{< /katex >}}
 
-
 {{< katex display >}}
-CircleSpeed = -this.layer * (mousePosition - \frac{canvaWidth}{2})
+CircleSpeed = -this.layer \* (mousePosition - \frac{canvaWidth}{2})
 {{< /katex >}}
 
 the code base of the example was obtained from the following [embedded page](https://happycoding.io/tutorials/p5js/creating-classes/parallax-dots)
 
 {{< p5-iframe sketch="/visual-computing-assignments/sketches/cursor_parallax.js" width="650" height="650" >}}
-

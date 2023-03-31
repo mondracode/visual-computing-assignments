@@ -1,5 +1,5 @@
 ---
-title: Linear Perspective
+title: 2. Linear Perspective
 type: docs
 ---
 
