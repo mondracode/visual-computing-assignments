@@ -15,6 +15,7 @@ function preload() {
   cloudImg = loadImage(`${hostURL}/assets/cloud.webp`);
   birdsGif = loadImage(`${hostURL}/assets/birds.gif`);
   airplaneImg = loadImage(`${hostURL}/assets/plane.png`);
+  skyscrapers = loadImage(`${hostURL}/assets/skyscrapers.png`);
 }
 
 function setup() {
