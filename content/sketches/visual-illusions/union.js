@@ -82,7 +82,7 @@ class Birds {
   draw() {
     let deltaX = 0;
     deltaX = this.layer;
-    this.x -= deltaX;
+    this.x -= deltaX * 0.6;
 
     // out of screen control
     if (this.x < -(this.layer * 30 * 1.5)) {
@@ -107,7 +107,7 @@ class Cloud {
   draw() {
     let deltaX = 0;
     deltaX = this.layer;
-    this.x += deltaX;
+    this.x += deltaX * 0.3;
 
     // out of screen control
     if (this.x < -border) {
@@ -125,7 +125,7 @@ class Cloud {
 class Airplane {
   constructor(layer) {
     this.layer = layer;
-    this.x = - this.layer * 250 * 1.5;
+    this.x = -this.layer * 250 * 1.5;
     this.y = height - this.layer * 250 * 1;
   }
 
@@ -137,7 +137,13 @@ class Airplane {
     this.x += deltaX;
     this.y -= deltaY;
 
-    image(airplaneImg, this.x, this.y, this.layer * 250 * 1.5, this.layer * 250 * 1);
+    image(
+      airplaneImg,
+      this.x,
+      this.y,
+      this.layer * 250 * 1.5,
+      this.layer * 250 * 1
+    );
   }
 }
 
@@ -174,8 +180,14 @@ class Man {
       this.sizeMultiplier = 0.002;
     }
 
-    image(manGif, this.x + this.deltaX, this.y + this.deltaY, 507 * (this.sizeMultiplier % 1), 358 * (this.sizeMultiplier % 1));
+    image(
+      manGif,
+      this.x + this.deltaX,
+      this.y + this.deltaY,
+      507 * (this.sizeMultiplier % 1),
+      358 * (this.sizeMultiplier % 1)
+    );
 
-    text('depth: ' + (this.x + this.deltaX), 10, 30);
+    text("depth: " + (this.x + this.deltaX), 10, 30);
   }
 }
