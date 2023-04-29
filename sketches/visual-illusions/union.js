@@ -13,7 +13,7 @@ var depthOfField = 0;
 
 function preload() {
   // Carga la imagen antes de que el sketch se ejecute
-  let hostURL = "https://mondracode.github.io/visual-computing-assignments";
+  let hostURL = "https://mondracode.com/visual-computing-assignments";
   // let hostURL = "http://localhost:1313/visual-computing-assignments";
 
   bgImg = loadImage(`${hostURL}/assets/cielo_background.jpg`);
