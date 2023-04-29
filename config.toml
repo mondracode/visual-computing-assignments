@@ -1,4 +1,4 @@
-baseURL = "https://mondracode.github.io/visual-computing-assignments"
+baseURL = "https://mondracode.com/visual-computing-assignments"
 languageCode = "en-us"
 title = "Visual Computing Assignments"
 theme = 'book'

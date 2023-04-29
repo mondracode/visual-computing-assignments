@@ -14,7 +14,7 @@ const canvasWidth = 500;
 const canvasHeight = 400;
 
 function preload() {
-  let hostURL = "https://mondracode.github.io/visual-computing-assignments/";
+  let hostURL = "https://mondracode.com/visual-computing-assignments/";
   imgCardOriginal = loadImage(hostURL + "/poker-dogs.jpg");
   imgCardBlur = loadImage(hostURL + "/poker-dogs.jpg");
   imgBg = loadImage(hostURL + "/poker-bg2.jpg");

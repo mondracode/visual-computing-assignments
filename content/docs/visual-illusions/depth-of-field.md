@@ -19,11 +19,11 @@ f(x) = \dfrac{2u^2Nc}{f^2}
 
 In the next diagram, one can visualize the effect of the depth of field. In the picture a subject lies within the **DOF** so it is in focus, on the other hand the background is out of focus and so are the items closer to the camera.
 
-![Depth of field, person in range](https://mondracode.github.io/visual-computing-assignments/dof-01.png)
+![Depth of field, person in range](https://mondracode.com/visual-computing-assignments/dof-01.png)
 
 This effect can be understood as the light rays that are coming from the subject are focused on the sensor, while the light rays that are coming from the background are not focused on the sensor. This is why the background is out of focus, same goes for the items closer to the camera.
 
-![Depth of field, light rays](https://mondracode.github.io/visual-computing-assignments/dof-02.png)
+![Depth of field, light rays](https://mondracode.com/visual-computing-assignments/dof-02.png)
 
 ## Solution
 
