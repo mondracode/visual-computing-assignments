@@ -11,6 +11,7 @@ const NUMBER_OF_CLOUD_LAYERS = 2;
 const NUMBER_OF_BIRD_LAYERS = 3;
 var depthOfField = 0;
 
+
 function preload() {
   // Carga la imagen antes de que el sketch se ejecute
   let hostURL = "https://mondracode.com/visual-computing-assignments";
