@@ -48,7 +48,7 @@ class Observer {
 
       if (pressedKeys.a) {
 
-        this.angle -= 0.01;
+        this.angle -= 0.03;
         if (this.angle < 0) {
           this.angle += 2 * PI;
         }
@@ -56,7 +56,7 @@ class Observer {
         this.deltaY = Math.sin(this.angle);
       }
       if (pressedKeys.d) {
-        this.angle += 0.01;
+        this.angle += 0.03;
         if (this.angle > 2 * PI) {
           this.angle -= 2 * PI;
         }
@@ -85,10 +85,10 @@ class Grid {
         [1, 1, 1, 1, 1, 1, 1, 1],
         [1, 0, 1, 0, 0, 0, 0, 1],
         [1, 0, 1, 0, 0, 0, 0, 1],
-        [1, 0, 1, 0, 0, 0, 0, 1],
         [1, 0, 0, 0, 0, 0, 0, 1],
         [1, 0, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 1, 0, 0, 1, 1],
+        [1, 0, 0, 0, 1, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1]
       ];
     this.mapWidth = this.map[0].length;
