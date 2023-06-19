@@ -7,6 +7,12 @@ type: docs
 
 ## **Introduction**
 
+Raycasting is a technique used in computer graphics and game development to simulate the behavior of rays of light. It involves tracing rays from a specific origin in a scene and determining the objects or surfaces they intersect with. Raycasting is widely used for various purposes, such as rendering "3D" graphics, implementing collision detection, and creating visual effects like reflections and shadows.
+
+This method of 3D scene rendering is what made [Wolfenstein 3D](https://en.wikipedia.org/wiki/Wolfenstein_3D) a technichal achievement fir graphics of its time.
+
+![Wolfenstein 3D](https://sm.ign.com/t/ign_nordic/news/w/wolfenstei/wolfenstein-3d-devs-remember-how-nintendos-strict-censors-ma_gzzw.1200.jpg 'Wolfenstein 3D, one of the most important games of the 1990s')
+
 ## **Solution - a p5.js example**
 
 This code is a simplified implementation of a raycasting algorithm in JavaScript. The algorithm is used to render a 2D grid map consisting of with walls and an observer that can move within the scene.
@@ -324,6 +330,4 @@ class Rays {
 
 ## **Conclusions**
 
-The ability to control different types of lights, adjust their position and play with lighting effects offers endless possibilities to create atmospheres, highlight specific objects and convey emotions through the right combination of lights and shadows.
-
-Visual computing is an exciting and constantly evolving field that combines programming with visual expression. Through the exploration of lighting, 3D modeling and rendering techniques, professionals can open new doors of creativity and deliver stunning visual experiences in various industries and disciplines.
+Raycasting is an important technique in computer graphics and game development because it allows for real-time rendering, collision detection, and spatial queries. It provides a lightweight and efficient alternative to raytracing, making it suitable for applications that require interactive and responsive experiences, such as video games, simulations, and augmented reality. While raytracing offers higher visual fidelity, raycasting's speed and simplicity make it a crucial tool for real-time rendering and efficient use of computational resources.
