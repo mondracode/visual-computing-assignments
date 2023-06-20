@@ -17,7 +17,6 @@ Furthermore, our code follows efficient rendering principles and techniques, ens
 
 In summary, our code offers complete control over lighting in 3D environments, enabling you to create visually stunning and captivating effects. Whether you are a developer seeking to enhance the graphical quality of your games or a digital artist exploring new forms of visual expression, our Spotlight-based solution is an indispensable and powerful asset in your creative arsenal.
 
-
 ## **Solution - a p5.js example**
 
 The code provided is an implementation of a program that uses the p5.js library to create a visual representation of a 3D scene. In particular, the code focuses on the use of lights in the scene and allows the user to switch between different types of lights, such as point light, directional light and ambient light.
@@ -43,7 +42,7 @@ In summary, this code shows an example of how to use different types of lights i
 ## **Code**
 
 ```js
-let lightType = "point";
+let lightType = 'point';
 let lightPosX = 140;
 let lightPosY = 160;
 let lightPosZ = 144;
@@ -56,24 +55,24 @@ function setup() {
   createCanvas(600, 600, WEBGL);
 
   // Crea un botón para cambiar el tipo de luz a pointLight
-  let pointButton = createButton("Point Light");
+  let pointButton = createButton('Point Light');
   pointButton.position(10, 10);
   pointButton.mousePressed(() => {
-    lightType = "point";
+    lightType = 'point';
   });
 
   // Crea un botón para cambiar el tipo de luz a directionalLight
-  let directionalButton = createButton("Directional Light");
+  let directionalButton = createButton('Directional Light');
   directionalButton.position(120, 10);
   directionalButton.mousePressed(() => {
-    lightType = "directional";
+    lightType = 'directional';
   });
 
   // Crea un botón para cambiar el tipo de luz a ambientLight
-  let ambientButton = createButton("Ambient Light");
+  let ambientButton = createButton('Ambient Light');
   ambientButton.position(260, 10);
   ambientButton.mousePressed(() => {
-    lightType = "ambient";
+    lightType = 'ambient';
   });
 }
 
@@ -85,9 +84,9 @@ function showHideSliders() {
   sliders = [];
   labels = [];
 
-  if (lightType === "point") {
+  if (lightType === 'point') {
     // Crear los nuevos sliders y etiquetas
-    let yLabel = createP("y:");
+    let yLabel = createP('y:');
     yLabel.position(10, 70);
     labels.push(yLabel);
 
@@ -98,7 +97,7 @@ function showHideSliders() {
     });
     sliders.push(ySlider);
 
-    let xLabel = createP("x:");
+    let xLabel = createP('x:');
     xLabel.position(10, ySlider.y + ySlider.height + 5);
     labels.push(xLabel);
 
@@ -109,7 +108,7 @@ function showHideSliders() {
     });
     sliders.push(xSlider);
 
-    let zLabel = createP("z:");
+    let zLabel = createP('z:');
     zLabel.position(10, xSlider.y + xSlider.height + 5);
     labels.push(zLabel);
 
@@ -133,11 +132,11 @@ function draw() {
 
   showHideSliders();
 
-  if (lightType === "point") {
+  if (lightType === 'point') {
     pointLight(0, 255, 255, lightPosX, lightPosY, lightPosZ);
-  } else if (lightType === "directional") {
+  } else if (lightType === 'directional') {
     directionalLight(51, 102, 126, -dx, -dy, -1);
-  } else if (lightType === "ambient") {
+  } else if (lightType === 'ambient') {
     ambientLight(255, 255, 200);
   }
 
@@ -151,3 +150,7 @@ function draw() {
 The ability to control different types of lights, adjust their position and play with lighting effects offers endless possibilities to create atmospheres, highlight specific objects and convey emotions through the right combination of lights and shadows.
 
 Visual computing is an exciting and constantly evolving field that combines programming with visual expression. Through the exploration of lighting, 3D modeling and rendering techniques, professionals can open new doors of creativity and deliver stunning visual experiences in various industries and disciplines.
+
+## **Future work**
+
+With the use of some advanced shading techniques like raytracing, the computing of lighting on dynamic entities on a 3D plane has reached new frontiers in realism and computational complexity. Applying some of these techniques can improve the objective of this assignment, and some other methods like raycasting (seen on the next example) could be used to add further functionality (by implementing e.g. a flashlight that casts rays and affects lighting locally).

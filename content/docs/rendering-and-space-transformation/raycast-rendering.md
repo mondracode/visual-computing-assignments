@@ -331,3 +331,7 @@ class Rays {
 ## **Conclusions**
 
 Raycasting is an important technique in computer graphics and game development because it allows for real-time rendering, collision detection, and spatial queries. It provides a lightweight and efficient alternative to raytracing, making it suitable for applications that require interactive and responsive experiences, such as video games, simulations, and augmented reality. While raytracing offers higher visual fidelity, raycasting's speed and simplicity make it a crucial tool for real-time rendering and efficient use of computational resources.
+
+## **Future work**
+
+This is a computationally complex representation but it's still open to the implementation of new features. Following the Wolfenstein 3D path, one can think of implementhing things such as tiled texturing, skyboxes, the existence of multiple observers and even multiple scenarios made of new grids such as the one shown in this example.
