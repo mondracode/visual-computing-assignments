@@ -11,7 +11,7 @@ Raycasting is a technique used in computer graphics and game development to simu
 
 This method of 3D scene rendering is what made [Wolfenstein 3D](https://en.wikipedia.org/wiki/Wolfenstein_3D) a technichal achievement fir graphics of its time.
 
-![Wolfenstein 3D](https://sm.ign.com/t/ign_nordic/news/w/wolfenstei/wolfenstein-3d-devs-remember-how-nintendos-strict-censors-ma_gzzw.1200.jpg 'Wolfenstein 3D, one of the most important games of the 1990s')
+![Wolfenstein 3D](https://sm.ign.com/t/ign_nordic/news/w/wolfenstei/wolfenstein-3d-devs-remember-how-nintendos-strict-censors-ma_gzzw.1200.jpg "Wolfenstein 3D, one of the most important games of the 1990s")
 
 ## **Solution - a p5.js example**
 
@@ -92,7 +92,12 @@ class Observer {
     this.draw = () => {
       strokeWeight(5);
       point(this.x, this.y);
-      line(this.x, this.y, this.x + this.deltaX * 10, this.y + this.deltaY * 10);
+      line(
+        this.x,
+        this.y,
+        this.x + this.deltaX * 10,
+        this.y + this.deltaY * 10
+      );
     };
 
     this.move = () => {
@@ -220,7 +225,12 @@ class Rays {
             rayXIntersection = rayX;
             rayYIntersection = rayY;
 
-            hDistanceToWall = this.getDistanceFromAtoB(observer.x, observer.y, rayXIntersection, rayYIntersection);
+            hDistanceToWall = this.getDistanceFromAtoB(
+              observer.x,
+              observer.y,
+              rayXIntersection,
+              rayYIntersection
+            );
             this.drawDistance = 8;
           } else {
             rayX += rayXOffset;
@@ -268,7 +278,12 @@ class Rays {
           ) {
             rayVXIntersection = rayX;
             rayVYIntersection = rayY;
-            vDistanceToWall = this.getDistanceFromAtoB(observer.x, observer.y, rayVXIntersection, rayVYIntersection);
+            vDistanceToWall = this.getDistanceFromAtoB(
+              observer.x,
+              observer.y,
+              rayVXIntersection,
+              rayVYIntersection
+            );
 
             this.drawDistance = 8;
           } else {
