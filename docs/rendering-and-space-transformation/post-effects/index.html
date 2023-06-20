@@ -1,6 +1,218 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="3. Post Effects"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://mondracode.com/visual-computing-assignments/docs/rendering-and-space-transformation/post-effects/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2023-06-19T22:04:36-07:00"><title>3. Post Effects | Visual Computing Assignments</title><link rel=manifest href=/visual-computing-assignments/manifest.json><link rel=icon href=/visual-computing-assignments/favicon.png type=image/x-icon><link rel=stylesheet href=/visual-computing-assignments/book.min.f645590089b7c16b44348afb99c091ff439d5d03ced854740aa04e373e37a0dd.css integrity="sha256-9kVZAIm3wWtENIr7mcCR/0OdXQPO2FR0CqBONz43oN0=" crossorigin=anonymous><script defer src=/visual-computing-assignments/flexsearch.min.js></script>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Introduction # For post effects we show the depth of field using WebGL shaders. The depth of field is a post effect that simulates the focus of a camera. The focus is set to the center of the screen and the depth of field is calculated using the distance of the objects to the camera. This effect is achieved in P5.js using a shader that blurs the objects in the scene."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="3. Post Effects"><meta property="og:description" content="Introduction # For post effects we show the depth of field using WebGL shaders. The depth of field is a post effect that simulates the focus of a camera. The focus is set to the center of the screen and the depth of field is calculated using the distance of the objects to the camera. This effect is achieved in P5.js using a shader that blurs the objects in the scene."><meta property="og:type" content="article"><meta property="og:url" content="https://mondracode.com/visual-computing-assignments/docs/rendering-and-space-transformation/post-effects/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2023-06-19T23:10:30-07:00"><title>3. Post Effects | Visual Computing Assignments</title><link rel=manifest href=/visual-computing-assignments/manifest.json><link rel=icon href=/visual-computing-assignments/favicon.png type=image/x-icon><link rel=stylesheet href=/visual-computing-assignments/book.min.f645590089b7c16b44348afb99c091ff439d5d03ced854740aa04e373e37a0dd.css integrity="sha256-9kVZAIm3wWtENIr7mcCR/0OdXQPO2FR0CqBONz43oN0=" crossorigin=anonymous><script defer src=/visual-computing-assignments/flexsearch.min.js></script>
 <script defer src=/visual-computing-assignments/en.search.min.806061c597a3647b7ff8d5fe4fc7297c9d8128cef96a8504fda277c7763ee617.js integrity="sha256-gGBhxZejZHt/+NX+T8cpfJ2BKM75aoUE/aJ3x3Y+5hc=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/visual-computing-assignments/><span>Visual Computing Assignments</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Rendering and Space Transformation</span><ul><li><a href=/visual-computing-assignments/docs/rendering-and-space-transformation/light/>1. Lights</a></li><li><a href=/visual-computing-assignments/docs/rendering-and-space-transformation/raycast-rendering/>2. Rendering by raycasting</a></li></ul></li><li class=book-section-flat><span>Visual Illusions</span><ul><li><a href=/visual-computing-assignments/docs/visual-illusions/depth-of-field/>1. Depth of Field</a></li><li><a href=/visual-computing-assignments/docs/visual-illusions/linear-perspective/>2. Linear Perspective</a></li><li><a href=/visual-computing-assignments/docs/visual-illusions/parallax/>3. Parallax</a></li><li><a href=/visual-computing-assignments/docs/visual-illusions/joint-example/>4. A joint example of depth perception</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/visual-computing-assignments/svg/menu.svg class=book-icon alt=Menu></label>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/visual-computing-assignments/><span>Visual Computing Assignments</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Rendering and Space Transformation</span><ul><li><a href=/visual-computing-assignments/docs/rendering-and-space-transformation/light/>1. Lights</a></li><li><a href=/visual-computing-assignments/docs/rendering-and-space-transformation/raycast-rendering/>2. Rendering by raycasting</a></li><li><a href=/visual-computing-assignments/docs/rendering-and-space-transformation/post-effects/ class=active>3. Post Effects</a></li></ul></li><li class=book-section-flat><span>Visual Illusions</span><ul><li><a href=/visual-computing-assignments/docs/visual-illusions/depth-of-field/>1. Depth of Field</a></li><li><a href=/visual-computing-assignments/docs/visual-illusions/linear-perspective/>2. Linear Perspective</a></li><li><a href=/visual-computing-assignments/docs/visual-illusions/parallax/>3. Parallax</a></li><li><a href=/visual-computing-assignments/docs/visual-illusions/joint-example/>4. A joint example of depth perception</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/visual-computing-assignments/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>3. Post Effects</strong>
-<label for=toc-control><img src=/visual-computing-assignments/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/mondracode/visual-computing-assignments/commit/b5447310b5be75cf3fbb3e4f31aed1124bc910fd title='Last modified by Paul Moros Anacona | June 20, 2023' target=_blank rel=noopener><img src=/visual-computing-assignments/svg/calendar.svg class=book-icon alt=Calendar>
-<span>June 20, 2023</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/visual-computing-assignments/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#introduction><strong>Introduction</strong></a></li><li><a href=#code><strong>Code</strong></a></li><li><a href=#conclusion>Conclusion</a></li></ul></li></ul></nav></aside></header><article class=markdown><h2 id=introduction><strong>Introduction</strong>
+<a class=anchor href=#introduction>#</a></h2><p>For post effects we show the depth of field using WebGL shaders. The depth of field is a post effect that simulates the focus of a camera. The focus is set to the center of the screen and the depth of field is calculated using the distance of the objects to the camera. This effect is achieved in P5.js using a shader that blurs the objects in the scene. For the shader we have: the vertex shader (<code>vert</code>) performs the necessary calculations to transform the vertices of a 3D model from object space to clip space. The uniforms <code>uModelViewMatrix</code>, <code>uProjectionMatrix</code>, and <code>uNormalMatrix</code> are used for the transformations. The resulting position in clip space is stored in <code>gl_Position</code>, and the vertex texture coordinates are passed to the fragment shader through <code>vVertTexCoord</code>.</p><p>The main function then applies the focal blur effect by sampling neighboring pixels and blending them based on their depth values. It iterates over a maximum number of samples (<code>MAX_NUM_SAMPLES</code>) but stops if the number of samples exceeds <code>uNumSamples</code>. Each sample is offset based on its position around the center pixel, and the corresponding depth value is obtained from the depth texture. The sample&rsquo;s blur amount is calculated using <code>calcBlur</code>.</p><p>A weight value is determined based on whether the sampled depth is greater than or equal to the original depth, or if the sample&rsquo;s blur amount is greater than the calculated blur amount for the center pixel. This weight determines the contribution of the sample to the final color. The color is accumulated by blending the sampled color with the weight, and the total weight is accumulated as well.</p><iframe id=floating style=width:625px;height:625px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script src=/visual-computing-assignments/sketches/post-effects/floating.js></script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe><h2 id=code><strong>Code</strong>
+<a class=anchor href=#code>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>vert</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`attribute vec3 aPosition;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  attribute vec3 aNormal;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  attribute vec2 aTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform mat4 uModelViewMatrix;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform mat4 uProjectionMatrix;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform mat3 uNormalMatrix;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  varying highp vec2 vVertTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  void main(void) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    vec4 positionVec4 = vec4(aPosition, 1.0);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    gl_Position = uProjectionMatrix * uModelViewMatrix * positionVec4;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    vVertTexCoord = aTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>vert</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`attribute vec3 aPosition;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  attribute vec3 aNormal;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  attribute vec2 aTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform mat4 uModelViewMatrix;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform mat4 uProjectionMatrix;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform mat3 uNormalMatrix;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  varying highp vec2 vVertTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  void main(void) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    vec4 positionVec4 = vec4(aPosition, 1.0);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    gl_Position = uProjectionMatrix * uModelViewMatrix * positionVec4;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    vVertTexCoord = aTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>frag</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`precision mediump float;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  varying highp vec2 vVertTexCoord;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform sampler2D uImg;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform sampler2D uDepth;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform vec2 uSize;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform float uIntensity;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform int uNumSamples;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform float uTargetZ;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform float uNear;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  uniform float uFar;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  const int MAX_NUM_SAMPLES = 20;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  float depthToZ(float depth) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    float depthNormalized = 2.0 * depth - 1.0;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    return 2.0 * uNear * uFar / (uFar + uNear - depthNormalized * (uFar - uNear));
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  float calcBlur(float z, float pixelScale) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    return clamp(abs(z - uTargetZ), 0.0, 0.5*pixelScale);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  void main() {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    float pixelScale = max(uSize.x, uSize.y);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    float total = 1.0;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    vec4 color = texture2D(uImg, vVertTexCoord);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    float origZ = depthToZ(texture2D(uDepth, vVertTexCoord).x);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    float blurAmt = calcBlur(origZ, pixelScale);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    for (int i = 0; i &lt; MAX_NUM_SAMPLES; i++) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      if (i &gt;= uNumSamples) break;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      float z = depthToZ(texture2D(uDepth, vVertTexCoord + offset).x);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      float sampleBlur = calcBlur(z, pixelScale);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      float weight = float((z &gt;= origZ) || (sampleBlur &gt;= blurAmt*radius + 0.));
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      vec4 sample = texture2D(uImg, vVertTexCoord + offset);
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      color += weight * sample;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      total += weight;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    color /= total;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    gl_FragColor = color;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  `</span>;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/*
+</span></span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>A ball floating the water
+</span></span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>bg</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>stepTime</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2500</span>; <span style=color:#75715e>// ms
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>stepSeparation</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>150</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>holeRadius</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>holeDepth</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>500</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fbo</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>blurShader</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>ballZ</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1000</span>; <span style=color:#75715e>// Initial ball Z position
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>350</span>, <span style=color:#ae81ff>325</span>, <span style=color:#a6e22e>WEBGL</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>pixelDensity</span>(<span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>bg</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>loadImage</span>(<span style=color:#e6db74>&#34;water.jpg&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fbo</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Framebuffer</span>(window);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createShader</span>(<span style=color:#a6e22e>vert</span>, <span style=color:#a6e22e>frag</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>eyeZ</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>height</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>tan</span>(<span style=color:#a6e22e>PI</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>6</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>near</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>eyeZ</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>far</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>eyeZ</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>perspective</span>(<span style=color:#a6e22e>PI</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>3</span>, <span style=color:#a6e22e>width</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>height</span>, <span style=color:#a6e22e>near</span>, <span style=color:#a6e22e>far</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>linearStepProgress</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>millis</span>() <span style=color:#f92672>%</span> <span style=color:#a6e22e>stepTime</span>) <span style=color:#f92672>/</span> <span style=color:#a6e22e>stepTime</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>stepProgress</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>Ease</span>.<span style=color:#a6e22e>easeInOutCubic</span>(<span style=color:#a6e22e>linearStepProgress</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>stepSide</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>millis</span>() <span style=color:#f92672>%</span> (<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>) <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>stepTime</span> <span style=color:#f92672>?</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>targetDepth</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>holeDepth</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>blurIntensity</span> <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>0.02</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.01</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>sin</span>(((<span style=color:#a6e22e>millis</span>() <span style=color:#f92672>%</span> (<span style=color:#ae81ff>5</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>5</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>)) <span style=color:#f92672>*</span> <span style=color:#a6e22e>TWO_PI</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fbo</span>.<span style=color:#a6e22e>draw</span>(() =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>clear</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>push</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>100</span>); <span style=color:#75715e>// Adjust the background brightness
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>image</span>(<span style=color:#a6e22e>bg</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>200</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>200</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Point up at the light
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>rotateX</span>(<span style=color:#a6e22e>PI</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.35</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Sway from side to side each step
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>rotateZ</span>(<span style=color:#a6e22e>sin</span>((<span style=color:#ae81ff>0.5</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>linearStepProgress</span>) <span style=color:#f92672>*</span> <span style=color:#a6e22e>PI</span>) <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepSide</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>PI</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.008</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rotateZ</span>(
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>sin</span>((<span style=color:#a6e22e>Ease</span>.<span style=color:#a6e22e>easeInOutQuad</span>(<span style=color:#a6e22e>linearStepProgress</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.5</span>) <span style=color:#f92672>*</span> <span style=color:#a6e22e>TWO_PI</span>) <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>stepSide</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>PI</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>0.0025</span>
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Extra motion
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fiveStep</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>millis</span>() <span style=color:#f92672>%</span> (<span style=color:#ae81ff>5</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>5</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fourStep</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>millis</span>() <span style=color:#f92672>%</span> (<span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>4</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>stepTime</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>translate</span>(
+</span></span><span style=display:flex><span>      <span style=color:#ae81ff>10</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>sin</span>(<span style=color:#a6e22e>fiveStep</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>TWO_PI</span>),
+</span></span><span style=display:flex><span>      <span style=color:#ae81ff>20</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>cos</span>(<span style=color:#a6e22e>fourStep</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>TWO_PI</span>),
+</span></span><span style=display:flex><span>      <span style=color:#ae81ff>30</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>sin</span>(<span style=color:#a6e22e>fiveStep</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>TWO_PI</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>300</span>)
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>noLights</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>push</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>165</span>, <span style=color:#ae81ff>0</span>); <span style=color:#75715e>// Orange color
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>sphere</span>(<span style=color:#ae81ff>100</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pointLight</span>(<span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>255</span>, <span style=color:#ae81ff>0</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>900</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>400</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// (Anchor shape)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>push</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>180</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Vertical bar
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>push</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>translate</span>(<span style=color:#ae81ff>0</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>900</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>cylinder</span>(<span style=color:#ae81ff>15</span>, <span style=color:#ae81ff>3000</span>);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>clear</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>push</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rectMode</span>(<span style=color:#a6e22e>CENTER</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>shader</span>(<span style=color:#a6e22e>blurShader</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>_renderer</span>
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>getTexture</span>(<span style=color:#a6e22e>fbo</span>.<span style=color:#a6e22e>depth</span>)
+</span></span><span style=display:flex><span>    .<span style=color:#a6e22e>setInterpolation</span>(<span style=color:#a6e22e>_renderer</span>.<span style=color:#a6e22e>GL</span>.<span style=color:#a6e22e>NEAREST</span>, <span style=color:#a6e22e>_renderer</span>.<span style=color:#a6e22e>GL</span>.<span style=color:#a6e22e>NEAREST</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uImg&#34;</span>, <span style=color:#a6e22e>fbo</span>.<span style=color:#a6e22e>color</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uDepth&#34;</span>, <span style=color:#a6e22e>fbo</span>.<span style=color:#a6e22e>depth</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uSize&#34;</span>, [<span style=color:#a6e22e>width</span>, <span style=color:#a6e22e>height</span>]);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uIntensity&#34;</span>, <span style=color:#a6e22e>blurIntensity</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uNumSamples&#34;</span>, <span style=color:#ae81ff>15</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uTargetZ&#34;</span>, <span style=color:#a6e22e>targetDepth</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uNear&#34;</span>, <span style=color:#a6e22e>near</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>blurShader</span>.<span style=color:#a6e22e>setUniform</span>(<span style=color:#e6db74>&#34;uFar&#34;</span>, <span style=color:#a6e22e>far</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rect</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>width</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>height</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>pop</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// Update the ball position
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>ballZ</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>holeDepth</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>holeRadius</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fallSpeed</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>ballZ</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>fallSpeed</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=conclusion>Conclusion
+<a class=anchor href=#conclusion>#</a></h2><p>Thanks to P5JS providing us the texture and depth buffer, we can easily implement the depth of field effect. The shader allows us to render the scene precisely and efficiently. The depth of field effect is a very useful effect in the 3D scene. It can help us to focus on the object we want to see and blur the background. It is also a very common effect in movies. The depth of field effect can make the scene more realistic and more comfortable to watch. However implementing this effect can get tricky, given teh usage of buffers and the use of easing functions to create the effect.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/mondracode/visual-computing-assignments/commit/bd028aab167302295b62f74508091d2b8b302b22 title='Last modified by Paul Moros Anacona | June 20, 2023' target=_blank rel=noopener><img src=/visual-computing-assignments/svg/calendar.svg class=book-icon alt=Calendar>
+<span>June 20, 2023</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#introduction><strong>Introduction</strong></a></li><li><a href=#code><strong>Code</strong></a></li><li><a href=#conclusion>Conclusion</a></li></ul></li></ul></nav></div></aside></main></body></html>
