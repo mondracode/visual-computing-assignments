@@ -5,11 +5,11 @@ type: docs
 
 ## **Introduction**
 
-For post effects we show the depth of field using WebGL shaders. The depth of field is a post effect that simulates the focus of a camera. The focus is set to the center of the screen and the depth of field is calculated using the distance of the objects to the camera. This effect is achieved in P5.js using a shader that blurs the objects in the scene. For the shader we have: the vertex shader (`vert`) performs the necessary calculations to transform the vertices of a 3D model from object space to clip space. The uniforms `uModelViewMatrix`, `uProjectionMatrix`, and `uNormalMatrix` are used for the transformations. The resulting position in clip space is stored in `gl_Position`, and the vertex texture coordinates are passed to the fragment shader through `vVertTexCoord`.
+For post effects we show the depth of field using WebGL shaders. The depth of field is a post effect that simulates the focus of a camera. The focus is set to the center of the screen and the depth of field is calculated using the distance of the objects to the camera. This effect is achieved in P5.js using a shader that blurs the objects in the scene.
+
+For the shader we have: the vertex shader (`vert`) performs the necessary calculations to transform the vertices of a 3D model from object space to clip space. The uniforms `uModelViewMatrix`, `uProjectionMatrix`, and `uNormalMatrix` are used for the transformations. The resulting position in clip space is stored in `gl_Position`, and the vertex texture coordinates are passed to the fragment shader through `vVertTexCoord`.
 
 The main function then applies the focal blur effect by sampling neighboring pixels and blending them based on their depth values. It iterates over a maximum number of samples (`MAX_NUM_SAMPLES`) but stops if the number of samples exceeds `uNumSamples`. Each sample is offset based on its position around the center pixel, and the corresponding depth value is obtained from the depth texture. The sample's blur amount is calculated using `calcBlur`.
-
-A weight value is determined based on whether the sampled depth is greater than or equal to the original depth, or if the sample's blur amount is greater than the calculated blur amount for the center pixel. This weight determines the contribution of the sample to the final color. The color is accumulated by blending the sampled color with the weight, and the total weight is accumulated as well.
 
 <div style="display: flex; justify-content: center;">
   {{< p5-iframe sketch="/visual-computing-assignments/sketches/post-effects/floating.js" width="350" height="350" >}}
