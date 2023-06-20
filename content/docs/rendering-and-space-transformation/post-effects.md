@@ -11,7 +11,9 @@ The main function then applies the focal blur effect by sampling neighboring pix
 
 A weight value is determined based on whether the sampled depth is greater than or equal to the original depth, or if the sample's blur amount is greater than the calculated blur amount for the center pixel. This weight determines the contribution of the sample to the final color. The color is accumulated by blending the sampled color with the weight, and the total weight is accumulated as well.
 
-{{< p5-iframe sketch="/visual-computing-assignments/sketches/post-effects/floating.js" width="350" height="350" >}}
+<div style="display: flex; justify-content: center;">
+  {{< p5-iframe sketch="/visual-computing-assignments/sketches/post-effects/floating.js" width="350" height="350" >}}
+</div>
 
 ## **Code**
 
