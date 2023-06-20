@@ -1,5 +1,5 @@
 ---
-title: 2. Raycasting
+title: 2. Rendering by raycasting
 type: docs
 ---
 
